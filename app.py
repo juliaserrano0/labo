@@ -23,9 +23,9 @@ def index():
 @app.route('/download', methods=['POST'])
 def download():
     # Récupérer les données du formulaire
-    nom = request.form['nom'].strip()
-    prenom = request.form['prenom'].strip()
-    date_naissance = request.form['date_naissance'].strip()
+    nom = request.form.get('nom', '').strip()
+    prenom = request.form.get('prenom', '').strip()
+    date_naissance = request.form.get('date_naissance', '').strip()
 
     # Convertir la date de naissance en JJMMAAAA
     date_naissance = format_date(date_naissance)
