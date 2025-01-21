@@ -1,0 +1,239 @@
+:root {
+    --primary: #2A5C82;
+    --secondary: #5BA4E6;
+    --light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--light);
+}
+
+/* Header */
+.header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center; /* Centrage vertical */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Centrage vertical */
+    margin-left: 30rem; /* Déplacer le logo vers la droite */
+    position: relative; /* Permet de déplacer le logo indépendamment */
+}
+
+.logo {
+    height: 80px; /* Agrandir le logo */
+    margin-right: -10rem; /* Espace entre le logo et le texte */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column; /* Alignement vertical du texte */
+    justify-content: center; /* Centrage vertical */
+    text-align: center; /* Centrage du texte */
+    width: 100%; /* Prendre toute la largeur disponible */
+    margin-left: -450px; /* Déplace le texte vers la gauche */
+}
+
+.text-container h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin: 0;
+}
+
+.text-container p {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin: 0;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 100px;
+    padding: 4rem 2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    padding-bottom: 8rem;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Formulaire */
+.form-container {
+    max-width: 800px;
+    margin: -5rem auto 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+.download-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 8px rgba(42,92,130,0.2);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-section {
+    background: white;
+    padding: 4rem 2rem;
+    margin-top: 3rem;
+}
+
+.contact-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.contact-card {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer Minimaliste */
+.footer-minimal {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer-minimal p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+    animation: fadeIn 1s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        margin: -5rem 1rem 2rem;
+        padding: 1.5rem;
+    }
+
+    .logo-container {
+        margin-left: 1rem; /* Ajustement pour les petits écrans */
+    }
+
+    .logo {
+        height: 60px; /* Taille réduite pour les petits écrans */
+    }
+
+    .text-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
